@@ -18,6 +18,10 @@ local function stripMine(n)
         turtle.dig()
         turtle.turnLeft()
     end
+  
+    turtle.select(1)
+    StackSize = getItemCount(1)
+    turtle.dropDown(StackSize)
 
     turtle.digUp()
     turtle.up()
