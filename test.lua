@@ -29,4 +29,4 @@ local function stripMine (n)
 end
 
 displayFuelLevel()
-stripMine()
+stripMine(10)
