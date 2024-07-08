@@ -2,7 +2,8 @@ local function main ()
   term.clear() --clear the terminal
   
   local FuelLevel = turtle.getFuelLevel()
-  print(FuelLevel)
+  
+  print("FuelLevel")
 end
 
 main()
