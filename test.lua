@@ -8,7 +8,8 @@ end
 
 local function stripMine (n)
 
-    for i = n,0,-1 do
+    for i = n,0,-1
+    do
     
       turle.dig()
   
