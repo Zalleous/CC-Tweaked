@@ -7,12 +7,14 @@ local function displayFuelLevel ()
 end
 
 local function getUserInput ()
-  len = io.read("*n")
+  len = tonumber(read())
   if len < 0 then
     print("Number must be positive")
 
   else
     return len
+
+  end
 end
 
 local function turnAround ()
@@ -98,6 +100,6 @@ local function stripMine(n)
 	turnAround()
 
 end
-lenght = getUserInput()
+local lenght = getUserInput()
 displayFuelLevel()
 stripMine(lenght)
