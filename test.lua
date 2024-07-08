@@ -6,66 +6,98 @@ local function displayFuelLevel ()
   
 end
 
-local function stripMine(n)
-    for i = n, 1, -1
-    do
-        turtle.dig()
-        turtle.forward()
-        turtle.turnLeft()
-        turtle.dig()
-        turtle.turnRight()
-        turtle.turnRight()
-        turtle.dig()
-        turtle.turnLeft()
-    end
+local function getUserInput ()
+  len = io.read("*n")
+  if len < 0 then
+    print("Number must be positive")
 
-    turtle.digUp()
-    turtle.up()
-    turtle.turnRight()
-    turtle.dig
-    turtle.turnRight()
-    turtle.turnRight()
-    turtle.dig()
-    turtle.turnLeft()
-
-    for i = n, 1, -1
-    do
-        turtle.dig()
-        turtle.forward()
-        turtle.turnLeft()
-        turtle.dig()
-        turtle.turnRight()
-        turtle.turnRight()
-        turtle.dig()
-        turtle.turnLeft()
-
-    end
-
-    turtle.select(1)
-    StackSize = getItemCount(1)
-    turtle.dropDown(StackSize)
-
-    turtle.digUp()
-    turtle.up()
-    turtle.turnRight()
-    turtle.dig
-    turtle.turnRight()
-    turtle.turnRight()
-    turtle.dig()
-    turtle.turnLeft()
-
-    for i = n, 1, -1
-    do
-        turtle.dig()
-        turtle.forward()
-        turtle.turnLeft()
-        turtle.dig()
-        turtle.turnRight()
-        turtle.turnRight()
-        turtle.dig()
-        turtle.turnLeft()
-    end
+  else
+    return len
 end
 
+local function turnAround ()
+
+	turtle.turnRight()
+	turtle.turnRight()
+
+end
+
+local function mineRow ()
+
+	turtle.dig()
+    turtle.forward()
+    turtle.turnLeft()
+    turtle.dig()
+    turnAround()
+    turtle.dig()
+    turtle.turnLeft()
+
+end
+
+local function lineUp ()
+
+    turtle.digUp()
+    turtle.up()
+    turtle.turnRight()
+    turtle.dig()
+	turnAround()
+    turtle.dig()
+    turtle.turnLeft()
+
+end
+
+local function comeBack (n)
+
+	turnAround()
+
+	for i = n, 1, -1
+	do
+		turtle.forward()
+	end
+	
+	turtle.down()
+	turtle.down()
+
+end
+
+local function dropInv ()
+
+	for i = 15,1,-1
+	do
+		turtle.select(i)
+    	turtle.drop(64)
+	end
+
+end
+
+local function stripMine(n)
+
+    for i = n, 1, -1
+    do
+        mineRow()
+    end
+
+    lineUp()
+
+    for i = n, 2, -1
+    do
+        mineRow()
+    end
+
+	lineUp()
+
+    for i = n, 2, -1
+    do
+        mineRow()
+    end
+
+	comeBack(n)
+
+	dropInv()
+
+	turnAround()
+
+end
+lenght = getUserInput()
 displayFuelLevel()
-stripMine(5)
+stripMine(lenght)
