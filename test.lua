@@ -6,28 +6,53 @@ local function displayFuelLevel ()
   
 end
 
-local function stripMine (n)
-
-    for i = n,0,-1
+local function stripMine(n)
+    for i = n, 0, -1
     do
-    
-      turle.dig()
-  
-      turle.forward()
-  
-      turtle.turnLeft()
-  
-      turtle.dig()
-  
-      turtle.turnRight() 
-      turtle.turnRight()
-  
-      turle.dig()
-  
-      turtle.turnLeft()
+        turtle.dig()
+        turtle.forward()
+        turtle.turnLeft()
+        turtle.dig()
+        turtle.turnRight()
+        turtle.turnRight()
+        turtle.dig()
+        turtle.turnLeft()
+    end
 
+    turtle.digUp()
+    turtle.up()
+    turtle.turnRight()
+    turtle.turnRight()
+
+    for i = n, 0, -1
+    do
+        turtle.dig()
+        turtle.forward()
+        turtle.turnLeft()
+        turtle.dig()
+        turtle.turnRight()
+        turtle.turnRight()
+        turtle.dig()
+        turtle.turnLeft()
+    end
+
+    turtle.digUp()
+    turtle.up()
+    turtle.turnRight()
+    turtle.turnRight()
+
+    for i = n, 0, -1
+    do
+        turtle.dig()
+        turtle.forward()
+        turtle.turnLeft()
+        turtle.dig()
+        turtle.turnRight()
+        turtle.turnRight()
+        turtle.dig()
+        turtle.turnLeft()
     end
 end
 
 displayFuelLevel()
-stripMine(10)
+stripMine(5)
