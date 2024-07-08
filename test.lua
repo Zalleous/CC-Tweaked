@@ -3,7 +3,7 @@ local function main ()
   
   local FuelLevel = turtle.getFuelLevel()
   
-  print("FuelLevel")
+  print("-/rThe turle has "..FuelLevel.." fuel remaining./r-")
 end
 
 main()
