@@ -22,7 +22,11 @@ local function stripMine(n)
     turtle.digUp()
     turtle.up()
     turtle.turnRight()
+    turtle.dig
     turtle.turnRight()
+    turtle.turnRight()
+    turtle.dig()
+    turtle.turnLeft()
 
     for i = n, 0, -1
     do
@@ -39,7 +43,11 @@ local function stripMine(n)
     turtle.digUp()
     turtle.up()
     turtle.turnRight()
+    turtle.dig
     turtle.turnRight()
+    turtle.turnRight()
+    turtle.dig()
+    turtle.turnLeft()
 
     for i = n, 0, -1
     do
